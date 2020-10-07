@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        var div = document.querySelector('#app');
+        var viewModel = {};
+        // reactivity
+        
+        // Object.defineProperty(대상 객체, 객체 속성{
+        //     정의 내용
+        // })
+        
+        Object.defineProperty(viewModel,'str',{
+            //속성 접근시 동작 
+            get: function(){
+                console.log('접근');
+            },
+            //속성 값 할당시 동작
+            set:function(newValue){
+                console.log('할당', newValue);
+                div.innerHTML = newValue;
+            }
+        })
+    </script>
+
+</body>
+</html>
